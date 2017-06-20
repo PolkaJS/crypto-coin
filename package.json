@@ -1,6 +1,6 @@
 {
   "name": "skeleton-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "When creating new modules, use this skeletal structure",
   "main": "index.js",
   "scripts": {

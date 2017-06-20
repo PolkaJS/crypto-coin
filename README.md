@@ -2,10 +2,10 @@
 
 [travis-image]: https://travis-ci.org/zion-coin/skeleton-module-zion-coin.svg?branch=master
 [travis-url]: https://travis-ci.org/zion-coin/skeleton-module-zion-coin
-[npm-image]: https://img.shields.io/npm/v/skeleton-module-zion-coin.svg
-[npm-url]: https://npmjs.org/package/skeleton-module-zion-coin
+[npm-image]: https://img.shields.io/npm/v/skeleton-module.svg
+[npm-url]: https://npmjs.org/package/skeleton-module
 [downloads-image]: https://img.shields.io/npm/dm/skeleton-module-zion-coin.svg
-[downloads-url]: https://npmjs.org/package/skeleton-module-zion-coin
+[downloads-url]: https://npmjs.org/package/skeleton-module
 
 ## About
 
