@@ -1,0 +1,34 @@
+{
+  "name": "skeleton-module",
+  "version": "1.0.0",
+  "description": "When creating new modules, use this skeletal structure",
+  "main": "index.js",
+  "scripts": {
+    "lint+build+test": "yarn run lint && yarn run build && yarn run test",
+    "lint": "echo linting... && eslint ./src/**/*.js && echo 'successfully linted'",
+    "build": "echo building... && babel src/ -d lib/ && echo 'successfully built'",
+    "prepublish": "yarn run build",
+    "test": "echo running server tests... && tape test/**/*.js && echo 'successfully completed tests'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zion-coin/skeleton-module.git"
+  },
+  "author": "Craig OConnor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zion-coin/skeleton-module/issues"
+  },
+  "homepage": "https://github.com/zion-coin/skeleton-module#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.0.0",
+    "flow-bin": "^0.48.0",
+    "random-words": "0.0.1",
+    "rlp": "^2.0.0",
+    "sha3": "^1.2.0",
+    "tape": "^4.6.3"
+  }
+}
