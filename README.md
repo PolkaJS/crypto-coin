@@ -1,10 +1,10 @@
-# skeleton-module-zion-coin [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/zion-coin/skeleton-module-zion-coin.svg)](https://greenkeeper.io/)
+# skeleton-module [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/zion-coin/skeleton-module.svg)](https://greenkeeper.io/)
 
-[travis-image]: https://travis-ci.org/zion-coin/skeleton-module-zion-coin.svg?branch=master
-[travis-url]: https://travis-ci.org/zion-coin/skeleton-module-zion-coin
+[travis-image]: https://travis-ci.org/zion-coin/skeleton-module.svg?branch=master
+[travis-url]: https://travis-ci.org/zion-coin/skeleton-module
 [npm-image]: https://img.shields.io/npm/v/skeleton-module.svg
 [npm-url]: https://npmjs.org/package/skeleton-module
-[downloads-image]: https://img.shields.io/npm/dm/skeleton-module-zion-coin.svg
+[downloads-image]: https://img.shields.io/npm/dm/skeleton-module.svg
 [downloads-url]: https://npmjs.org/package/skeleton-module
 
 ## About
