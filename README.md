@@ -4,7 +4,7 @@
 [travis-url]: https://travis-ci.org/PolkaJS/skeleton-module
 [npm-image]: https://img.shields.io/npm/v/@PolkaJS/skeleton-module.svg
 [npm-url]: https://npmjs.org/package/@PolkaJS/skeleton-module
-[downloads-image]: https://img.shields.io/npm/dm/skeleton-module.svg
+[downloads-image]: https://img.shields.io/npm/dm/@PolkaJS/skeleton-module.svg
 [downloads-url]: https://npmjs.org/package/@PolkaJS/skeleton-module
 
 ## About
