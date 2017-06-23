@@ -1,5 +1,5 @@
 {
-  "name": "@PolkaJS/skeleton-module",
+  "name": "@polkajs/skeleton-module",
   "version": "1.0.1",
   "description": "When creating new modules, use this skeletal structure",
   "main": "index.js",
