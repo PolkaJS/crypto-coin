@@ -2,10 +2,10 @@
 
 [travis-image]: https://travis-ci.org/PolkaJS/skeleton-module.svg?branch=master
 [travis-url]: https://travis-ci.org/PolkaJS/skeleton-module
-[npm-image]: https://img.shields.io/npm/v/@PolkaJS/skeleton-module.svg
-[npm-url]: https://npmjs.org/package/@PolkaJS/skeleton-module
-[downloads-image]: https://img.shields.io/npm/dm/@PolkaJS/skeleton-module.svg
-[downloads-url]: https://npmjs.org/package/@PolkaJS/skeleton-module
+[npm-image]: https://img.shields.io/npm/v/@polkajs/skeleton-module.svg
+[npm-url]: https://npmjs.org/package/@polkajs/skeleton-module
+[downloads-image]: https://img.shields.io/npm/dm/@polkajs/skeleton-module.svg
+[downloads-url]: https://npmjs.org/package/@polkajs/skeleton-module
 
 ## About
 
