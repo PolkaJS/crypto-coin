@@ -1,17 +1,17 @@
-# skeleton-module [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/zion-coin/skeleton-module.svg)](https://greenkeeper.io/)
+# skeleton-module [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/PolkaJS/skeleton-module.svg)](https://greenkeeper.io/)
 
-[travis-image]: https://travis-ci.org/zion-coin/skeleton-module.svg?branch=master
-[travis-url]: https://travis-ci.org/zion-coin/skeleton-module
-[npm-image]: https://img.shields.io/npm/v/skeleton-module.svg
-[npm-url]: https://npmjs.org/package/skeleton-module
+[travis-image]: https://travis-ci.org/PolkaJS/skeleton-module.svg?branch=master
+[travis-url]: https://travis-ci.org/PolkaJS/skeleton-module
+[npm-image]: https://img.shields.io/npm/v/@PolkaJS/skeleton-module.svg
+[npm-url]: https://npmjs.org/package/@PolkaJS/skeleton-module
 [downloads-image]: https://img.shields.io/npm/dm/skeleton-module.svg
-[downloads-url]: https://npmjs.org/package/skeleton-module
+[downloads-url]: https://npmjs.org/package/@PolkaJS/skeleton-module
 
 ## About
 
 **Create new modules with this skeleton**
 
-`git clone https://github.com/zion-coin/skeleton-module.git`
+`git clone https://github.com/PolkaJS/skeleton-module.git`
 
 `git remote rm origin`
 
