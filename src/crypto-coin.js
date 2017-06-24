@@ -101,6 +101,7 @@ export default class CryptoCoin {
 
   createProtoTypes(self: CryptoCoin) {
     Object.keys(this.UNIT_MAP).forEach((denomination: string) => {
+      // $FlowFixMe
       self[denomination] = function () {
         self._convert(denomination, self.denomination);
         self.denomination = denomination;
@@ -470,6 +471,7 @@ export default class CryptoCoin {
       radix = 10;
     }
     return (denom)
+      // $FlowFixMe
       ? this[denom]().toString(radix) + ' ' + this.denomination
       : this.bigNum.toString(radix);
   }
