@@ -50,12 +50,25 @@ const coin = new CryptoCoin(21000);
 
 ### Basic Examples
 
+**new CryptoCoin([num, [radix, [denom, [opts]]]])**
+- num?: number | string | bigNum
+- radix?: number
+- denom?: string
+- opts?: Object
+
 ``` javascript
 // FULL SETUP OF THE DEFAULTS:
-const coin = new CryptoCoin(1, 10, 'wei', {
-  DEFAULT_GAS:    '21000',
-  COIN:           'ETH',
-  BIG_NUM_CONFIG: {}
+const coin = new CryptoCoin(0, 10, 'wei', {
+  DEFAULT_GAS: '21000',      // an ethereum standard gas price
+  UNIT_MAP:    UNIT_MAP_ETH, // scroll to the bottom to see
+  COIN:        'ETH',        // which blockchain coin to use
+  BIG_NUM_CONFIG: {}         // to update bignumber.js config
+});
+// simple:
+const coin = new CryptoCoin(0, 'wei');
+// options setting bitcoins denominations:
+const coin = new CryptoCoin(10, {
+  COIN: 'BTC'
 });
 
 // add to the coin:
@@ -70,9 +83,29 @@ coin.toString();
 coin.toString('ether');
 // OUTPUT: 1.000000000000000002      (ether)
 
+// subtract:
+coin.sub(1);
+
+// divide:
+coin.div(1);
+
+// multiply
+coin.mul(1);
 
 // get the default gas value:
 const gas = new CryptoCoin().defaultGas(); // (bignumber)
+```
+
+**The CryptoCoin is persistent**
+If the coin's value is 1 wei:
+``` javascript
+coin.add(1);
+coin.add(1);
+coin.toString(); // 3  wei
+coin.add(7);
+coin.toString(); // 10 wei
+coin.sub(5);
+coin.toString(); // 5  wei
 ```
 
 
@@ -138,8 +171,8 @@ coin.div(2).toString('kwei');   // 2.5      (kwei)
 
 **mul(num, [radix, [denom]]): CryptoCoin**
 - num: string | number | bigNum
-- radix: number
-- denom: string
+- radix?: number
+- denom?: string
 
 ``` javascript
 const coin = new CryptoCoin('5', 'kwei'); // 5000 (wei)
@@ -153,7 +186,26 @@ coin.mul(2).toString('kwei');   // 10       (kwei)
 
 ### CryptoCoin methods
 
-#### toString
+#### INSTANTIATE
+
+**new CryptoCoin([num, [radix, [denom, [opts]]]])**
+- num?: number | string | bigNum
+- radix?: number
+- denom?: string
+- opts?: Object
+
+``` javascript
+// DEFAULTS:
+const coin = new CryptoCoin('0', 10, 'wei', {
+  DEFAULT_GAS: '21000',      // an ethereum standard gas price
+  UNIT_MAP:    UNIT_MAP_ETH, // scroll to the bottom to see
+  COIN:        'ETH',        // which blockchain coin to use
+  BIG_NUM_CONFIG: {}         // to update bignumber.js config
+});
+```
+
+
+#### TO_STRING
 
 **toString([radix, [denom]]): string**
 - radix: string | number = 10
@@ -169,7 +221,7 @@ coin.toString('kwei');     // 5    (kwei)
 coin.toString(10, 'kwei'); // 5    (kwei)
 ```
 
-#### defaultGas
+#### DEFAULT_GAS
 
 **defaultGas(): CryptoCoin**
 
