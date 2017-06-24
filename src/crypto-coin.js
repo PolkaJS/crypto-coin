@@ -55,26 +55,32 @@ export default class CryptoCoin {
   UNIT_MAP:     Object;
   DEFAULT_GAS:  string;
   // defaut
-  constructor(num: number | string | bigNum, base?: string | number | Object, denom?: null | Object | string, opts?: null | Object) {
+  constructor(num?: number | string | bigNum, radix?: string | number | Object, denom?: null | Object | string, opts?: null | Object) {
+    if (!num)
+      num = 0;
     // Handle missing arguments
-    if (typeof base === 'object'){
+    if (typeof radix === 'object'){
       // opts is the second argument
-      opts = base;
-      base = 10;
+      opts = radix;
+      radix = 10;
     }
     if (typeof denom === 'object'){
       // opts is the third argument
       opts  = denom;
       denom = null; // we havn't set which UNIT_MAP we are using yet..
     }
-    if (typeof base === 'string'){
+    if (typeof radix === 'string'){
       // denomination is the second argument
-      denom = base;
-      base  = 10;
+      denom = radix;
+      radix  = 10;
     }
     // set the proper UNIT_MAP if COIN specified
-    if (opts && 'COIN' in opts)
-      opts.UNIT_MAP = (opts.COIN === 'BTC') ? UNIT_MAP_BTC : UNIT_MAP_ETH;
+    if (opts && 'COIN' in opts) {
+      if (opts.COIN === 'ETH')
+          opts.UNIT_MAP = UNIT_MAP_ETH;
+      else if (opts.COIN === 'BTC')
+          opts.UNIT_MAP = UNIT_MAP_BTC;
+    }
     // track options incase of new instantiations (add, sub, div, ...);
     // set defaults and pull in new if opts has any
     this.opts = extend({
@@ -85,8 +91,8 @@ export default class CryptoCoin {
     }, opts);
     // setup bigNum config incase a new config exists
     bigNum.config(this.opts.BIG_NUM_CONFIG);
-    // default base is 10
-    this.bigNum = (num instanceof bigNum) ? num : new bigNum(num, base);
+    // default radix is 10
+    this.bigNum = (num instanceof bigNum) ? num : new bigNum(num, radix);
     // setup the denomination map
     this.UNIT_MAP = this.opts.UNIT_MAP;
     // setup the DEFAULT_GAS
@@ -295,7 +301,14 @@ export default class CryptoCoin {
     return this;
   }
 
-  mul(num: string | number | bigNum, radix?: number): CryptoCoin {
+  mul(num: string | number | bigNum, radix?: number, denom?: string): CryptoCoin {
+    if (typeof radix === 'string') {
+      denom = radix;
+      radix  = 10;
+    }
+    if (denom)
+      num = new CryptoCoin(num, denom, this.opts);
+      
     this.bigNum = this.bigNum.mul(num, radix);
     return this;
   }
@@ -470,14 +483,16 @@ export default class CryptoCoin {
       denom = radix;
       radix = 10;
     }
+    // lets not edit the actual value (persistance)
+    let ts = new CryptoCoin(this.bigNum, this.opts);
     return (denom)
-      // $FlowFixMe
-      ? this[denom]().toString(radix) + ' ' + this.denomination
-      : this.bigNum.toString(radix);
+      ? ts[denom]().toString(radix)
+      : ts.bigNum.toString(radix);
   }
 
   defaultGas() {
-    this.bigNum = bigNum(this.DEFAULT_GAS);
+    this.bigNum = new bigNum(this.DEFAULT_GAS);
+    return this;
   }
 
   _convert(to: string, from?: null | string = Object.keys(this.UNIT_MAP)[0]) {

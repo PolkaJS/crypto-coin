@@ -9,7 +9,25 @@
 
 ## About
 
+## Install
 
+``` javascript
+// npm
+npm install --save @polkajs/crypto-coin
+// yarn
+yarn add @polkajs/crypto-coin
+```
+
+## Use
+
+``` javascript
+// ES6
+import CryptoCoin from '@polkajs/CryptoCoin';
+// Or standard
+const CryptoCoin = require('@polkajs/CryptoCoin');
+
+const coin = new CryptoCoin(21000);
+```
 
 ## API
 
