@@ -1,7 +1,7 @@
 {
   "name": "@polkajs/crypto-coin",
   "version": "2.7.0",
-  "description": "Ethereum denominations using big integer",
+  "description": "Working with denominations and big number",
   "main": "./lib/crypto-coin.js",
   "scripts": {
     "lint+build+test": "yarn run lint && yarn run build && yarn run test",
@@ -35,9 +35,6 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
-    "big-integer": "^1.6.23",
-    "biginteger.js": "^1.0.1",
-    "bignum": "^0.12.5",
     "bignumber.js": "^4.0.2",
     "extend": "^3.0.1"
   }
