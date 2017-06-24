@@ -1,19 +1,20 @@
-# skeleton-module [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/PolkaJS/skeleton-module.svg)](https://greenkeeper.io/)
+# crypto-coin [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![Greenkeeper badge](https://badges.greenkeeper.io/PolkaJS/crypto-coin.svg)](https://greenkeeper.io/)
 
-[travis-image]: https://travis-ci.org/PolkaJS/skeleton-module.svg?branch=master
-[travis-url]: https://travis-ci.org/PolkaJS/skeleton-module
-[npm-image]: https://img.shields.io/npm/v/@polkajs/skeleton-module.svg
-[npm-url]: https://npmjs.org/package/@polkajs/skeleton-module
-[downloads-image]: https://img.shields.io/npm/dm/@polkajs/skeleton-module.svg
-[downloads-url]: https://npmjs.org/package/@polkajs/skeleton-module
+[travis-image]: https://travis-ci.org/PolkaJS/crypto-coin.svg?branch=master
+[travis-url]: https://travis-ci.org/PolkaJS/crypto-coin
+[npm-image]: https://img.shields.io/npm/v/@polkajs/crypto-coin.svg
+[npm-url]: https://npmjs.org/package/@polkajs/crypto-coin
+[downloads-image]: https://img.shields.io/npm/dm/@polkajs/crypto-coin.svg
+[downloads-url]: https://npmjs.org/package/@polkajs/crypto-coin
 
 ## About
 
-**Create new modules with this skeleton**
 
-`git clone https://github.com/PolkaJS/skeleton-module.git`
 
-`git remote rm origin`
+## API
+
+this module extends `bignumber.js` whose documentation can be found here:
+[bignumber.js](https://mikemcl.github.io/bignumber.js/)
 
 ## ISC License (ISC)
 

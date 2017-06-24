@@ -1,7 +1,10 @@
 const test = require('tape');
+const CryptoCoin = require('../lib/crypto-coin').CryptoCoin;
 
-test('timing test', function (t) {
+test('check proper instanceof', function (t) {
     t.plan(1);
 
-    t.equal(typeof Date.now, 'function');
+    let x = new CryptoCoin(5);
+
+    t.ok(x instanceof CryptoCoin, 'evaluates to true');
 });

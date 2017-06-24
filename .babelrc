@@ -2,5 +2,10 @@
   "minified": true,
   "sourceMap": true,
   "comments": false,
-  "presets": ["flow"]
+  "presets": ["flow", "es2015"],
+  "plugins": [
+    "transform-class-properties",
+    "transform-es2015-modules-commonjs",
+    "add-module-exports"
+  ]
 }

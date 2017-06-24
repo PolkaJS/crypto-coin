@@ -1,8 +1,8 @@
 {
-  "name": "@polkajs/skeleton-module",
-  "version": "1.0.2",
-  "description": "When creating new modules, use this skeletal structure",
-  "main": "index.js",
+  "name": "@polkajs/crypto-coin",
+  "version": "2.7.0",
+  "description": "Ethereum denominations using big integer",
+  "main": "./lib/crypto-coin.js",
   "scripts": {
     "lint+build+test": "yarn run lint && yarn run build && yarn run test",
     "lint": "echo linting... && eslint ./src/**/*.js && echo 'successfully linted'",
@@ -12,22 +12,33 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PolkaJS/skeleton-module.git"
+    "url": "git+https://github.com/PolkaJS/crypto-coin.git"
   },
   "author": "Craig OConnor",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PolkaJS/skeleton-module/issues"
+    "url": "https://github.com/PolkaJS/crypto-coin/issues"
   },
-  "homepage": "https://github.com/PolkaJS/skeleton-module#readme",
+  "homepage": "https://github.com/PolkaJS/crypto-coin#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.0.0",
     "flow-bin": "^0.48.0",
     "random-words": "0.0.1",
     "rlp": "^2.0.0",
     "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "big-integer": "^1.6.23",
+    "biginteger.js": "^1.0.1",
+    "bignum": "^0.12.5",
+    "bignumber.js": "^4.0.2",
+    "extend": "^3.0.1"
   }
 }
