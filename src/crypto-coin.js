@@ -38,7 +38,7 @@ const UNIT_MAP_BTC = {
     'megabit':      '100000000',
     'XBT':          '100000000',
     'BTC':          '100000000',
-    'bitcoin':      '100000000',
+    'bitcoin':      '100000000'
 };
 
 interface Options {
@@ -308,7 +308,7 @@ export default class CryptoCoin {
     }
     if (denom)
       num = new CryptoCoin(num, denom, this.opts);
-      
+
     this.bigNum = this.bigNum.mul(num, radix);
     return this;
   }

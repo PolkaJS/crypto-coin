@@ -26,6 +26,8 @@ import CryptoCoin from '@polkajs/CryptoCoin';
 // Or standard
 const CryptoCoin = require('@polkajs/CryptoCoin');
 
+
+// Create a new Coin:
 const coin = new CryptoCoin(21000);
 ```
 

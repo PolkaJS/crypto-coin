@@ -1,6 +1,6 @@
 {
   "name": "@polkajs/crypto-coin",
-  "version": "2.7.0",
+  "version": "2.9.0",
   "description": "Working with denominations and big number",
   "main": "./lib/crypto-coin.js",
   "scripts": {
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "bignumber.js": "^4.0.2",
+    "chalk": "^1.1.3",
     "extend": "^3.0.1"
   }
 }
