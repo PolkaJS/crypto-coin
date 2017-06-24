@@ -16,6 +16,23 @@
 npm install --save @polkajs/crypto-coin
 // yarn
 yarn add @polkajs/crypto-coin
+
+// GLOBAL
+npm install -g @polkajs/crypto-coin
+```
+
+#### Global use:
+
+`crypto-coin [from] [to] [value]`
+
+- **help**    `crypto-coin -h`
+- **types**   `crypto-coin -t ETH`
+- **version** `crypto-coin -v`
+
+``` javascript
+crypto-coin ether satoshi 1
+
+// OUTPUT: 1 ether = 1000000000000000000 satoshi
 ```
 
 ## Use
@@ -31,10 +48,138 @@ const CryptoCoin = require('@polkajs/CryptoCoin');
 const coin = new CryptoCoin(21000);
 ```
 
+### Basic Examples
+
+``` javascript
+// FULL SETUP OF THE DEFAULTS:
+const coin = new CryptoCoin(1, 10, 'wei', {
+  DEFAULT_GAS:    '21000',
+  COIN:           'ETH',
+  BIG_NUM_CONFIG: {}
+});
+
+// add to the coin:
+coin.add(1);
+
+// or add in a denomination:
+coin.add(1, 'ether');
+
+// print the total:
+coin.toString();
+// OUTPUT: 1000000000000000002      (wei)
+coin.toString('ether');
+// OUTPUT: 1.000000000000000002      (ether)
+
+
+// get the default gas value:
+const gas = new CryptoCoin().defaultGas(); // (bignumber)
+```
+
+
 ## API
 
 this module extends `bignumber.js` whose documentation can be found here:
 [bignumber.js](https://mikemcl.github.io/bignumber.js/)
+
+### Updated bignumber.js methods
+
+#### addition
+
+**add(num, [radix, [denom]]): CryptoCoin**
+- num: string | number | bigNum
+- radix: number
+- denom: string
+
+``` javascript
+const coin = new CryptoCoin('5', 'kwei'); // 5000 (wei)
+
+coin.add(2).toString();         // 5002   (wei)
+// or add in a different denomination
+coin.add(2, 'kwei').toString(); // 7      (wei)
+// or print in a different denomination
+coin.add(2).toString('kwei');   // 5.002 (kwei)
+```
+
+#### subtraction
+
+**sub(num, [radix, [denom]]): CryptoCoin**
+- num: string | number | bigNum
+- radix: number
+- denom: string
+
+``` javascript
+const coin = new CryptoCoin('5', 'kwei'); // 5000 (wei)
+
+coin.sub(2).toString();         // 4998  (wei)
+// or add in a different denomination
+coin.sub(2, 'kwei').toString(); // 3000  (wei)
+// or print in a different denomination
+coin.sub(2).toString('kwei');   // 4.998 (kwei)
+```
+
+#### division
+
+**div(num, [radix, [denom]]): CryptoCoin**
+- num: string | number | bigNum
+- radix: number
+- denom: string
+
+``` javascript
+const coin = new CryptoCoin('5', 'kwei'); // 5000 (wei)
+
+coin.div(2).toString();         // 2500     (wei)
+// or add in a different denomination
+coin.div(2, 'kwei').toString(); // 2.5      (wei)
+// or print in a different denomination
+coin.div(2).toString('kwei');   // 2.5      (kwei)
+```
+
+#### multiplication
+
+**mul(num, [radix, [denom]]): CryptoCoin**
+- num: string | number | bigNum
+- radix: number
+- denom: string
+
+``` javascript
+const coin = new CryptoCoin('5', 'kwei'); // 5000 (wei)
+
+coin.mul(2).toString();         // 10000    (wei)
+// or add in a different denomination
+coin.mul(2, 'kwei').toString(); // 10000000 (wei)
+// or print in a different denomination
+coin.mul(2).toString('kwei');   // 10       (kwei)
+```
+
+### CryptoCoin methods
+
+#### toString
+
+**toString([radix, [denom]]): string**
+- radix: string | number = 10
+- denom: string
+
+``` javascript
+const coin = new CryptoCoin('5', 'kwei'); // 5000 (wei)
+
+coin.toString();           // 5000 (wei)
+// or print in a different denomination
+coin.toString('kwei');     // 5    (kwei)
+// fill in every parameter
+coin.toString(10, 'kwei'); // 5    (kwei)
+```
+
+#### defaultGas
+
+**defaultGas(): CryptoCoin**
+
+``` javascript
+const coin = new CryptoCoin().defaultGas(); // 21000 (wei)
+
+coin.toString();  // 21000 (wei)
+```
+
+---
 
 ## ISC License (ISC)
 

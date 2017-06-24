@@ -3,6 +3,7 @@
 const CryptoCoin = require("../lib/crypto-coin.js").default;
 const chalk      = require("chalk");
 const OPTIONS    = require("./options.json");
+const VERSION    = require("../package.json").version;
 
 let from  = process.argv[2];
 let to    = process.argv[3];
@@ -11,7 +12,7 @@ let value = process.argv[4];
 if (process.argv[2] === '--v' || process.argv[2] === '-v' || process.argv[2] === '--version' || process.argv[2] === '-version') {
   console.log(`
 PolkaJS - CryptoCoin
-version:  2.9.0
+version:  ${VERSION}
 year:     2017
 
 Created by Craig O'Connor
@@ -45,7 +46,7 @@ console.log(`${value} ${from} = ${result} ${to}`);
 
 function print_tutorial() {
   console.log(`
-crypto-coin - (version 2.9.0)
+crypto-coin - (version ${VERSION})
 
 usage:            crypto-coin [from] [to] [value]
 

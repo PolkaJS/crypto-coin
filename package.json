@@ -1,8 +1,12 @@
 {
   "name": "@polkajs/crypto-coin",
-  "version": "2.9.0",
+  "version": "2.9.4",
   "description": "Working with denominations and big number",
   "main": "./lib/crypto-coin.js",
+  "bin": {
+    "crypto-coin": "./bin/crypto-coin.js"
+  },
+  "preferGlobal": "true",
   "scripts": {
     "lint+build+test": "yarn run lint && yarn run build && yarn run test",
     "lint": "echo linting... && eslint ./src/**/*.js && echo 'successfully linted'",
