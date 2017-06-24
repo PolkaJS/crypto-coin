@@ -41,7 +41,7 @@ crypto-coin ether satoshi 1
 // ES6
 import CryptoCoin from '@polkajs/CryptoCoin';
 // Or standard
-const CryptoCoin = require('@polkajs/CryptoCoin');
+const CryptoCoin = require('@polkajs/CryptoCoin').default;
 
 
 // Create a new Coin:
