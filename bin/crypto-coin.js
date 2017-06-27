@@ -31,9 +31,30 @@ if (process.argv[2] === '--t' || process.argv[2] === '-t') {
 }
 
 if (process.argv[2] === undefined || process.argv[3] === undefined || process.argv[4] === undefined) {
-  console.log(chalk.red("Invalid Arguments"));
+  console.log(chalk.red("Invalid number of arguments"));
   console.log();
-  print_tutorial()
+  print_tutorial();
+  return;
+}
+
+if (isNaN(value)) {
+  console.log(chalk.red("[value] is not a number"));
+  console.log();
+  print_tutorial();
+  return;
+}
+
+if (Object.keys(OPTIONS.UNIT_MAP).indexOf(from) === -1) {
+  console.log(chalk.red("[from] is not a valid denomination"));
+  console.log();
+  print_tutorial();
+  return;
+}
+
+if (Object.keys(OPTIONS.UNIT_MAP).indexOf(to) === -1) {
+  console.log(chalk.red("[to] is not a valid denomination"));
+  console.log();
+  print_tutorial();
   return;
 }
 
