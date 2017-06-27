@@ -30,9 +30,9 @@ npm install -g @polkajs/crypto-coin
 - **version** `crypto-coin -v`
 
 ``` javascript
-crypto-coin ether satoshi 1
+crypto-coin ether wei 1
 
-// OUTPUT: 1 ether = 1000000000000000000 satoshi
+// OUTPUT: 1 ether = 1000000000000000000 wei
 ```
 
 ## Use
