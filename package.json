@@ -39,7 +39,7 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
-    "bignumber.js": "^4.0.2",
+    "bignumber.js": "^7.2.0",
     "chalk": "^2.0.0",
     "extend": "^3.0.1"
   }
